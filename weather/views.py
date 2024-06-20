@@ -1,7 +1,6 @@
 from rest_framework import status
 from rest_framework.generics import GenericAPIView, ListCreateAPIView
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from weather.models import ImportRequest, WeatherRecord
 from weather.serializers import ImportRequestSerializer, WeatherRecordSerializer
@@ -12,8 +11,6 @@ class WeatherList(ListCreateAPIView):
     queryset = WeatherRecord.objects.all()
     serializer_class = WeatherRecordSerializer
 
-
-class DeleteWeatherList(APIView):
     @classmethod
     def delete(cls, *args, **kwargs):
         WeatherRecord.objects.all().delete()
