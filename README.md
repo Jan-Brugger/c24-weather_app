@@ -32,3 +32,18 @@ Install dependencies
 Install pre-commit hooks
 
     pre-commit install
+
+
+### Run application
+
+Start database
+
+    docker compose up -d
+
+Migrate tables
+
+     python manage.py makemigrations && python manage.py migrate
+
+Run application
+
+    python manage.py runserver 8001
