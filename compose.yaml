@@ -1,0 +1,14 @@
+services:
+  c24_app_db:
+    container_name: c24_app_db
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: c24_app
+      MYSQL_PASSWORD: c24_app
+      MYSQL_DATABASE: c24_app
+    volumes:
+      - "./.db:/var/lib/mysql"
+    ports:
+      - "3307:3306"
